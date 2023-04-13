@@ -8,13 +8,16 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2021",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2021", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@neo4j-crud/graph": ["packages/graph/src/index.ts"],
+      "@neo4j-crud/shared": ["packages/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
