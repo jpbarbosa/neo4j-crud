@@ -1,21 +1,21 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import express from 'express';
-import * as path from 'path';
+import neo4j from 'neo4j-driver';
+import { movies } from '@neo4j-crud/graph';
 
 const app = express();
-
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
-
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
-});
-
 const port = process.env.PORT || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+
+app.get('/movies', async (req, res) => {
+  const auth = neo4j.auth.basic('', '');
+  const config = { disableLosslessIntegers: true };
+  const session = neo4j.driver('bolt://localhost:7687', auth, config).session();
+  const records = await movies(session).getAll();
+  await session.close();
+  res.send(records);
 });
+
+const server = app.listen(port, () => {
+  console.log(`Listening at http://localhost:${port}`);
+});
+
 server.on('error', console.error);

@@ -1,1 +1,1 @@
-export * from './lib/graph';
+export * from './movies';
