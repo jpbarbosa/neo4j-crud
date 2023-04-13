@@ -24,7 +24,7 @@ export const Content: React.FC = () => {
 
   return (
     <ul className="record-list">
-      {data?.map((movie) => (
+      {data.map((movie) => (
         <li>{movie.title}</li>
       ))}
     </ul>
