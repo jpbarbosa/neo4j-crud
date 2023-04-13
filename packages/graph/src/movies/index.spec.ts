@@ -52,7 +52,17 @@ describe('graph.movies', () => {
     expectMoviesToBeEqual(movie, sampleMovie);
   });
 
-  it.todo('should update movie tagline');
+  it('should update movie tagline', async () => {
+    const [movie] = await graph.movies(session).getAll(sampleMovie.title);
+    movie.tagline += ' updated';
+    const updatedMovie = await graph.movies(session).update(movie.id, movie);
+    expectMoviesToBeEqual(updatedMovie, movie);
+  });
 
-  it.todo('should delete the movie');
+  it('should delete the movie', async () => {
+    const [movie] = await graph.movies(session).getAll(sampleMovie.title);
+    await graph.movies(session).remove(movie.id);
+    const movies = await graph.movies(session).getAll(sampleMovie.title);
+    expect(movies).toHaveLength(0);
+  });
 });
