@@ -41,4 +41,3 @@ nx test graph
 ### Preview
 
 ![Demo](demo.gif)
-```
