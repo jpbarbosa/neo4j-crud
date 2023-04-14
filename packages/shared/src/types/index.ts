@@ -3,3 +3,4 @@ export * from './AppResponse';
 export * from './Movie';
 export * from './People';
 export * from './relationships';
+export * from './GraphVisData';
