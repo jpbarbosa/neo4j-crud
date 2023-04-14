@@ -9,4 +9,13 @@ export const people = {
 
   getById: (id: number) =>
     axios.get<Person>(`${url}/${id}`).then((res) => res.data),
+
+  create: (person: Person) =>
+    axios.post<Person>(url, person).then((res) => res.data),
+
+  update: (id: number, person: Person) =>
+    axios.put<Person>(`${url}/${id}`, person).then((res) => res.data),
+
+  remove: (id: number) =>
+    axios.delete<Person>(`${url}/${id}`).then((res) => res.data),
 };
