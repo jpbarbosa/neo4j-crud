@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { NavigationAlert } from '../../../components';
 import { Content } from './Content';
+import { Link } from 'react-router-dom';
 
 export const List = () => {
   const [search, setSearch] = useState<string>('');
@@ -16,7 +18,13 @@ export const List = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
+        <div>
+          <Link to="new" className="button primary">
+            Create Movie
+          </Link>
+        </div>
       </div>
+      <NavigationAlert />
       <Content search={search} />
     </div>
   );
