@@ -24,6 +24,13 @@ export const shortestPath = (session: Session) => ({
     const nodes: Node[] = [];
     const edges: Edge[] = [];
 
+    if (!result.records.length) {
+      return {
+        nodes,
+        edges,
+      };
+    }
+
     const { segments } = result.records[0].get('path');
 
     segments.forEach((segment, index) => {
