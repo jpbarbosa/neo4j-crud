@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { NavigationAlert } from '../../../components';
 import { Content } from './Content';
-import { Link } from 'react-router-dom';
 
 export const List = () => {
   const [search, setSearch] = useState<string>('');

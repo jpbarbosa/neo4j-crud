@@ -1,5 +1,5 @@
-import { Person, PersonMovie, relationships } from '@neo4j-crud/shared';
 import { Link } from 'react-router-dom';
+import { Person, PersonMovie, relationships } from '@neo4j-crud/shared';
 import { fileNameFromString } from '../../../utils/fileNameFromString';
 import { HighlightedText } from '../../../components';
 import { Movies } from './Movies';

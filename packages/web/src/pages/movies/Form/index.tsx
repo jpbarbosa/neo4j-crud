@@ -43,7 +43,7 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
     callback
   );
 
-  const { handleSubmit, control, reset, register } = useForm<Movie>({
+  const { handleSubmit, control, reset } = useForm<Movie>({
     defaultValues,
   });
 
@@ -93,13 +93,9 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
             </div>
           </fieldset>
           {relationships.map((relationship) => (
-            <fieldset key={relationship.key} className="actors">
+            <fieldset key={relationship.key} className="people">
               <legend>{stringToTitleCase(relationship.key)}</legend>
-              <People
-                control={control}
-                register={register}
-                relationship={relationship}
-              />
+              <People control={control} relationship={relationship} />
             </fieldset>
           ))}
           <div className="bottom-actions-bar">
