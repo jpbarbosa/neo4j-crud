@@ -2,7 +2,7 @@
 
 A fullstack CRUD application with Neo4j, Express, React, and TypeScript, built on top of NX monorepo structure.
 
-### Step-by-Step Tutorial (build your own app)
+### Step-By-Step Tutorial (build your own app)
 
 https://github.com/jpbarbosa/neo4j-crud/wiki
 
@@ -24,19 +24,19 @@ docker run \
 cp .env.example .env
 ```
 
-### Run the app
+### Run The App
 
 ```bash
 nx run-many --target=serve --all
 ```
 
-### Run end-to-end tests
+### Run End-To-End Tests
 
 ```bash
 nx run-many --target=e2e --all
 ```
 
-### Run graph unit tests
+### Run Graph Unit Tests
 
 ```bash
 nx test graph
