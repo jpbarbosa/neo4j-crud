@@ -6,6 +6,10 @@ A fullstack CRUD application with Neo4j, Express, React, and TypeScript, built o
 
 https://github.com/jpbarbosa/neo4j-crud/wiki
 
+### Screencast
+
+https://www.youtube.com/playlist?list=PLQr4xB1Tr3DFRu_z4tVWJdLsgd8QLsKhc
+
 ### Run Neo4j
 
 ```bash
